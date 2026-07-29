@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Target Reward – Claim Now</title>
+    <title>Pandora Reward – Claim Now</title>
     <meta name="robots" content="noindex, nofollow">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
     
@@ -11,16 +11,17 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            /* Target Branded Colors */
-            --brand: #CC0000;
-            --brand-dark: #990000;
-            --brand-light: #FFEAEB;
+            /* Pandora Branded Colors - Elegant Black & Soft Pink */
+            --brand: #111111;        /* Deep Black for premium feel */
+            --brand-dark: #000000;   /* Pure Black */
+            --brand-light: #FBEAEE;  /* Soft Pandora Pink background */
+            --brand-accent: #D27487; /* Slightly deeper pink for text/accents */
             
             --text: #111111;
             --text-mid: #4a5568;
             --text-light: #8896a6;
             --border: #e2e8f0;
-            --bg: #f8fafc;
+            --bg: #FAFAFA;
             --font: 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
@@ -60,7 +61,7 @@
             background: #fff; 
             border-radius: 12px; 
             position: relative;
-            box-shadow: 0 1vh 3vh rgba(204, 0, 0, 0.08); 
+            box-shadow: 0 1vh 3vh rgba(0, 0, 0, 0.05); 
             border: 2px dashed var(--border);
             padding: clamp(16px, 3vh, 24px); 
             display: flex; 
@@ -69,7 +70,7 @@
             flex-shrink: 0; 
             transition: transform 0.2s, border-color 0.2s;
         }
-        .voucher:hover { transform: translateY(-2px); border-color: #fca5a5; }
+        .voucher:hover { transform: translateY(-2px); border-color: var(--brand-accent); }
         
         .voucher::before, .voucher::after {
             content: ''; 
@@ -94,12 +95,12 @@
         }
         .v-logo { 
             height: clamp(28px, 5vh, 40px); 
-            max-width: 140px;
+            max-width: 160px;
             object-fit: contain; 
         }
         .v-badge { 
             background: var(--brand-light); 
-            color: var(--brand); 
+            color: var(--brand-accent); 
             font-size: clamp(0.6rem, 1.2vh, 0.7rem); 
             font-weight: 700; 
             padding: 4px 10px; 
@@ -146,7 +147,7 @@
         .v-status { 
             font-size: clamp(0.65rem, 1.3vh, 0.75rem); 
             font-weight: 700; 
-            color: var(--brand); 
+            color: var(--brand-accent); 
             display: flex; 
             align-items: center; 
             gap: 4px; 
@@ -156,7 +157,7 @@
             width: 6px; 
             height: 6px; 
             border-radius: 50%; 
-            background: var(--brand); 
+            background: var(--brand-accent); 
         }
 
         /* ── TIMELINE STEPS ── */
@@ -210,7 +211,7 @@
             background: var(--brand); 
             border-color: var(--brand); 
             color: #fff; 
-            box-shadow: 0 2px 8px rgba(204, 0, 0, 0.3); 
+            box-shadow: 0 2px 8px rgba(17, 17, 17, 0.3); 
         }
         .s-txt { 
             font-size: clamp(0.75rem, 1.6vh, 0.85rem); 
@@ -236,7 +237,7 @@
             justify-content: center; 
             position: relative; 
             transition: 0.2s; 
-            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.25); 
+            box-shadow: 0 4px 15px rgba(17, 17, 17, 0.25); 
             min-height: clamp(50px, 7vh, 60px); 
             margin-bottom: 8px; 
         }
@@ -265,12 +266,12 @@
             
             <div class="voucher">
                 <div class="v-top">
-                    <!-- Target Logo with SVG fallback -->
+                    <!-- Pandora Logo with text SVG fallback -->
                     <img 
-                        src="https://www.pngall.com/wp-content/uploads/13/Target-Logo-PNG-HD-Image.png" 
-                        alt="Target Logo" 
+                        src="https://1000logos.net/wp-content/uploads/2021/11/Pandora-Logo.png" 
+                        alt="Pandora Logo" 
                         class="v-logo"
-                        onerror="this.onerror=null; this.parentElement.innerHTML='<svg width=\'110\' height=\'32\' viewBox=\'0 0 120 36\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><circle cx=\'18\' cy=\'18\' r=\'16\' fill=\'%23CC0000\'/><circle cx=\'18\' cy=\'18\' r=\'10.6\' fill=\'white\'/><circle cx=\'18\' cy=\'18\' r=\'5.3\' fill=\'%23CC0000\'/><text x=\'42\' y=\'23\' font-family=\'Inter, sans-serif\' font-weight=\'800\' font-size=\'18\' fill=\'%23CC0000\'>TARGET</text></svg><div class=\'v-badge\'>Reward</div>';"
+                        onerror="this.onerror=null; this.parentElement.innerHTML='<svg width=\'130\' height=\'32\' viewBox=\'0 0 130 36\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><text x=\'0\' y=\'26\' font-family=\'Inter, sans-serif\' font-weight=\'800\' font-size=\'22\' fill=\'%23111111\' letter-spacing=\'1.5\'>PANDORA</text></svg><div class=\'v-badge\'>Reward</div>';"
                     >
                     <div class="v-badge">Reward</div>
                 </div>
@@ -307,8 +308,8 @@
         claimBtn.addEventListener('click', () => {
             claimBtn.classList.add('loading');
             setTimeout(() => {
-                // Updated Target Affiliate Link
-                window.location.href = 'https://trksy.org/aff_c?offer_id=2746&aff_id=171242';
+                // Updated Pandora Affiliate Link
+                window.location.href = 'https://linkthem.net/aff_c?offer_id=4070&aff_id=171242';
             }, 800);
         });
     })();
