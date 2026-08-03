@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Target Reward – Claim Now</title>
+    <title>LEGO® Reward – Claim Now</title>
     <meta name="robots" content="noindex, nofollow">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
     
@@ -11,16 +11,16 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            /* Target Branded Colors */
-            --brand: #CC0000;
-            --brand-dark: #990000;
-            --brand-light: #FFEAEB;
+            /* LEGO Branded Colors */
+            --brand: #E3000B;         /* LEGO Red */
+            --brand-dark: #B30007;    /* Darker Red for hover */
+            --brand-accent: #FFCF00;  /* LEGO Yellow */
             
             --text: #111111;
             --text-mid: #4a5568;
             --text-light: #8896a6;
             --border: #e2e8f0;
-            --bg: #f8fafc;
+            --bg: #f4f6f9;            /* Minimal light gray background */
             --font: 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
@@ -60,8 +60,8 @@
             background: #fff; 
             border-radius: 12px; 
             position: relative;
-            box-shadow: 0 1vh 3vh rgba(204, 0, 0, 0.08); 
-            border: 2px dashed var(--border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(227, 0, 11, 0.05); 
+            border: 2px solid #fff;
             padding: clamp(16px, 3vh, 24px); 
             display: flex; 
             flex-direction: column;
@@ -69,8 +69,12 @@
             flex-shrink: 0; 
             transition: transform 0.2s, border-color 0.2s;
         }
-        .voucher:hover { transform: translateY(-2px); border-color: #fca5a5; }
+        .voucher:hover { 
+            transform: translateY(-2px); 
+            border-color: var(--brand-accent); 
+        }
         
+        /* Ticket punch holes */
         .voucher::before, .voucher::after {
             content: ''; 
             position: absolute; 
@@ -80,35 +84,37 @@
             background: var(--bg); 
             border-radius: 50%; 
             transform: translateY(-50%);
-            border: 2px dashed var(--border);
+            border: 2px solid transparent;
+            z-index: 2;
         }
-        .voucher::before { left: -12px; border-right-color: transparent; border-top-color: transparent; transform: translateY(-50%) rotate(45deg); }
-        .voucher::after { right: -12px; border-left-color: transparent; border-bottom-color: transparent; transform: translateY(-50%) rotate(45deg); }
+        .voucher::before { left: -10px; }
+        .voucher::after { right: -10px; }
 
         .v-top { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            border-bottom: 1px solid var(--border); 
+            border-bottom: 1px dashed var(--border); 
             padding-bottom: 1.5vh; 
         }
         .v-logo { 
-            height: clamp(28px, 5vh, 40px); 
+            height: clamp(32px, 5.5vh, 44px); 
             max-width: 140px;
             object-fit: contain; 
         }
         .v-badge { 
-            background: var(--brand-light); 
-            color: var(--brand); 
+            background: var(--brand-accent); 
+            color: #000; 
             font-size: clamp(0.6rem, 1.2vh, 0.7rem); 
-            font-weight: 700; 
-            padding: 4px 10px; 
-            border-radius: 100px; 
+            font-weight: 800; 
+            padding: 5px 12px; 
+            border-radius: 4px; /* Blocky radius for Lego feel */
             text-transform: uppercase; 
             letter-spacing: 1px; 
+            box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
         }
 
-        .v-mid { text-align: center; padding: 1vh 0; }
+        .v-mid { text-align: center; padding: 1.5vh 0; }
         .v-label { 
             font-size: clamp(0.6rem, 1.3vh, 0.7rem); 
             color: var(--text-light); 
@@ -119,14 +125,16 @@
         }
         .v-amount { 
             font-family: var(--font-mono); 
-            font-size: clamp(2.5rem, 5vh, 3.2rem); 
+            font-size: clamp(2.8rem, 5.5vh, 3.5rem); 
             font-weight: 800; 
-            color: var(--brand); 
+            color: var(--text); 
             line-height: 1; 
+            letter-spacing: -1px;
         }
         .v-amount span { 
             font-size: clamp(1.2rem, 2.5vh, 1.5rem); 
-            vertical-align: text-top; 
+            vertical-align: text-top;
+            color: var(--brand);
         }
 
         .v-bot { 
@@ -145,17 +153,17 @@
         .v-barcode i { background: var(--text); border-radius: 1px; }
         .v-status { 
             font-size: clamp(0.65rem, 1.3vh, 0.75rem); 
-            font-weight: 700; 
+            font-weight: 800; 
             color: var(--brand); 
             display: flex; 
             align-items: center; 
-            gap: 4px; 
+            gap: 6px; 
         }
         .v-status::before { 
             content: ''; 
-            width: 6px; 
-            height: 6px; 
-            border-radius: 50%; 
+            width: 8px; 
+            height: 8px; 
+            border-radius: 2px; 
             background: var(--brand); 
         }
 
@@ -210,7 +218,7 @@
             background: var(--brand); 
             border-color: var(--brand); 
             color: #fff; 
-            box-shadow: 0 2px 8px rgba(204, 0, 0, 0.3); 
+            box-shadow: 0 2px 8px rgba(227, 0, 11, 0.3); 
         }
         .s-txt { 
             font-size: clamp(0.75rem, 1.6vh, 0.85rem); 
@@ -225,22 +233,32 @@
             width: 100%; 
             padding: clamp(14px, 2.5vh, 18px); 
             font-size: clamp(1rem, 2vh, 1.1rem); 
-            font-weight: 700; 
+            font-weight: 800; 
             color: #fff; 
             background: var(--brand); 
             border: none; 
-            border-radius: 100px; 
+            border-radius: 8px; /* Slightly blocky to fit Lego aesthetic */
             cursor: pointer; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             position: relative; 
             transition: 0.2s; 
-            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.25); 
+            box-shadow: 0 4px 15px rgba(227, 0, 11, 0.25), inset 0 -3px 0 rgba(0,0,0,0.15); 
             min-height: clamp(50px, 7vh, 60px); 
             margin-bottom: 8px; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .btn:hover { background: var(--brand-dark); transform: translateY(-2px); }
+        .btn:hover { 
+            background: var(--brand-dark); 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 18px rgba(227, 0, 11, 0.3), inset 0 -3px 0 rgba(0,0,0,0.2);
+        }
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(227, 0, 11, 0.3), inset 0 -1px 0 rgba(0,0,0,0.2);
+        }
         .btn-txt { transition: 0.2s; }
         .spinner { 
             position: absolute; 
@@ -265,12 +283,12 @@
             
             <div class="voucher">
                 <div class="v-top">
-                    <!-- Target Logo with SVG fallback -->
+                    <!-- LEGO Logo with styled CSS fallback in case image fails -->
                     <img 
-                        src="https://www.pngall.com/wp-content/uploads/13/Target-Logo-PNG-HD-Image.png" 
-                        alt="Target Logo" 
+                        src="https://logos-world.net/wp-content/uploads/2020/09/LEGO-Symbol.png" 
+                        alt="LEGO Logo" 
                         class="v-logo"
-                        onerror="this.onerror=null; this.parentElement.innerHTML='<svg width=\'110\' height=\'32\' viewBox=\'0 0 120 36\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><circle cx=\'18\' cy=\'18\' r=\'16\' fill=\'%23CC0000\'/><circle cx=\'18\' cy=\'18\' r=\'10.6\' fill=\'white\'/><circle cx=\'18\' cy=\'18\' r=\'5.3\' fill=\'%23CC0000\'/><text x=\'42\' y=\'23\' font-family=\'Inter, sans-serif\' font-weight=\'800\' font-size=\'18\' fill=\'%23CC0000\'>TARGET</text></svg><div class=\'v-badge\'>Reward</div>';"
+                        onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'background:#E3000B;border:1px solid #000;outline:1px solid #FFCF00;padding:2px 6px;border-radius:2px;font-family:Arial, sans-serif;font-style:italic;color:white;font-size:18px;font-weight:900;line-height:1.2;letter-spacing:1px;box-shadow:inset 0 0 2px rgba(0,0,0,0.5);\'>LEGO</div>';"
                     >
                     <div class="v-badge">Reward</div>
                 </div>
@@ -305,10 +323,13 @@
     (function() {
         const claimBtn = document.getElementById('claim-btn');
         claimBtn.addEventListener('click', () => {
+            // Add loading state
             claimBtn.classList.add('loading');
+            
+            // Redirect after brief delay
             setTimeout(() => {
-                // Updated Target Affiliate Link
-                window.location.href = 'https://trksy.org/aff_c?offer_id=2746&aff_id=171242';
+                // Updated Lego Affiliate Link
+                window.location.href = 'https://giftclick.org/aff_c?offer_id=4668&aff_id=171242';
             }, 800);
         });
     })();
