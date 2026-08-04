@@ -294,6 +294,7 @@
                 </div>
                 <div class="v-mid">
                     <div class="v-label">Reward Balance</div>
+                    <!-- Dollar sign remains as default inside span -->
                     <div class="v-amount"><span>$</span>500</div>
                 </div>
                 <div class="v-bot">
@@ -322,6 +323,23 @@
     <script>
     (function() {
         const claimBtn = document.getElementById('claim-btn');
+        const currencySpan = document.querySelector('.v-amount span');
+
+        // Fetch user's IP-based country and update currency
+        fetch('https://get.geojs.io/v1/ip/country.json')
+            .then(response => response.json())
+            .then(data => {
+                // If country code is Great Britain (UK), change to Pounds. 
+                // US and others default to $ (already set in HTML).
+                if (data.country === 'GB') {
+                    currencySpan.textContent = '£';
+                }
+            })
+            .catch(error => {
+                console.warn('Geolocation failed, falling back to default currency ($).', error);
+            });
+
+        // Claim button interaction
         claimBtn.addEventListener('click', () => {
             // Add loading state
             claimBtn.classList.add('loading');
