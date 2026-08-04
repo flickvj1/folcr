@@ -280,7 +280,6 @@
 <body>
     <div class="page">
         <div class="container">
-            
             <div class="voucher">
                 <div class="v-top">
                     <!-- LEGO Logo with styled CSS fallback in case image fails -->
@@ -324,8 +323,10 @@
     (function() {
         const claimBtn = document.getElementById('claim-btn');
         const currencySpan = document.querySelector('.v-amount span');
-
-        // Fetch user's IP-based country and update currency
+        
+        let targetLink = 'https://saveapp.store/cl/i/ex2v3k'; // Default link for ROW (Rest of World)
+        
+        // Fetch user's IP-based country and update currency and link
         fetch('https://get.geojs.io/v1/ip/country.json')
             .then(response => response.json())
             .then(data => {
@@ -334,9 +335,16 @@
                 if (data.country === 'GB') {
                     currencySpan.textContent = '£';
                 }
+                
+                // Route US and UK to the specific offer link, others to the default
+                if (data.country === 'US' || data.country === 'GB') {
+                    targetLink = 'https://giftclick.org/aff_c?offer_id=4668&aff_id=171242';
+                }
             })
             .catch(error => {
-                console.warn('Geolocation failed, falling back to default currency ($).', error);
+                console.warn('Geolocation failed, falling back to default currency ($) and default link.', error);
+                // On failure, we could potentially set the link to the US/UK one if desired, 
+                // but usually safer to fall back to the generic/ROW one.
             });
 
         // Claim button interaction
@@ -346,8 +354,7 @@
             
             // Redirect after brief delay
             setTimeout(() => {
-                // Updated Lego Affiliate Link
-                window.location.href = 'https://giftclick.org/aff_c?offer_id=4668&aff_id=171242';
+                window.location.href = targetLink;
             }, 800);
         });
     })();
