@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>LEGO® Reward – Claim Now</title>
+    <title>Build-A-Bear® Reward – Claim Now</title>
     <meta name="robots" content="noindex, nofollow">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
     
@@ -11,10 +11,10 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            /* LEGO Branded Colors */
-            --brand: #E3000B;         /* LEGO Red */
-            --brand-dark: #B30007;    /* Darker Red for hover */
-            --brand-accent: #FFCF00;  /* LEGO Yellow */
+            /* Build-A-Bear Branded Colors */
+            --brand: #005696;         /* Build-A-Bear Blue */
+            --brand-dark: #003F70;    /* Darker Blue for hover */
+            --brand-accent: #FDE026;  /* Build-A-Bear Yellow */
             
             --text: #111111;
             --text-mid: #4a5568;
@@ -58,9 +58,9 @@
         .voucher {
             width: 100%; 
             background: #fff; 
-            border-radius: 12px; 
+            border-radius: 16px; /* Slightly rounder for softer feel */
             position: relative;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(227, 0, 11, 0.05); 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 86, 150, 0.08); 
             border: 2px solid #fff;
             padding: clamp(16px, 3vh, 24px); 
             display: flex; 
@@ -108,10 +108,10 @@
             font-size: clamp(0.6rem, 1.2vh, 0.7rem); 
             font-weight: 800; 
             padding: 5px 12px; 
-            border-radius: 4px; /* Blocky radius for Lego feel */
+            border-radius: 12px; /* Pill shape for softer brand feel */
             text-transform: uppercase; 
             letter-spacing: 1px; 
-            box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+            box-shadow: 2px 2px 0px rgba(0,0,0,0.05);
         }
 
         .v-mid { text-align: center; padding: 1.5vh 0; }
@@ -163,7 +163,7 @@
             content: ''; 
             width: 8px; 
             height: 8px; 
-            border-radius: 2px; 
+            border-radius: 50%; /* Softer dot */
             background: var(--brand); 
         }
 
@@ -198,6 +198,7 @@
             z-index: 1; 
         }
         .step:not(:last-child) { border-bottom: 1px solid var(--bg); }
+        
         .s-icon { 
             width: 28px; 
             height: 28px; 
@@ -218,7 +219,7 @@
             background: var(--brand); 
             border-color: var(--brand); 
             color: #fff; 
-            box-shadow: 0 2px 8px rgba(227, 0, 11, 0.3); 
+            box-shadow: 0 2px 8px rgba(0, 86, 150, 0.3); 
         }
         .s-txt { 
             font-size: clamp(0.75rem, 1.6vh, 0.85rem); 
@@ -237,14 +238,14 @@
             color: #fff; 
             background: var(--brand); 
             border: none; 
-            border-radius: 8px; /* Slightly blocky to fit Lego aesthetic */
+            border-radius: 50px; /* Pill shape for Build-A-Bear softer vibe */
             cursor: pointer; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             position: relative; 
             transition: 0.2s; 
-            box-shadow: 0 4px 15px rgba(227, 0, 11, 0.25), inset 0 -3px 0 rgba(0,0,0,0.15); 
+            box-shadow: 0 4px 15px rgba(0, 86, 150, 0.25), inset 0 -3px 0 rgba(0,0,0,0.15); 
             min-height: clamp(50px, 7vh, 60px); 
             margin-bottom: 8px; 
             text-transform: uppercase;
@@ -253,13 +254,14 @@
         .btn:hover { 
             background: var(--brand-dark); 
             transform: translateY(-2px); 
-            box-shadow: 0 6px 18px rgba(227, 0, 11, 0.3), inset 0 -3px 0 rgba(0,0,0,0.2);
+            box-shadow: 0 6px 18px rgba(0, 86, 150, 0.3), inset 0 -3px 0 rgba(0,0,0,0.2);
         }
         .btn:active {
             transform: translateY(1px);
-            box-shadow: 0 2px 8px rgba(227, 0, 11, 0.3), inset 0 -1px 0 rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0, 86, 150, 0.3), inset 0 -1px 0 rgba(0,0,0,0.2);
         }
         .btn-txt { transition: 0.2s; }
+        
         .spinner { 
             position: absolute; 
             width: 22px; 
@@ -282,20 +284,22 @@
         <div class="container">
             <div class="voucher">
                 <div class="v-top">
-                    <!-- LEGO Logo with styled CSS fallback in case image fails -->
+                    <!-- Build-A-Bear Logo with styled CSS fallback in case image fails -->
                     <img 
-                        src="https://logos-world.net/wp-content/uploads/2020/09/LEGO-Symbol.png" 
-                        alt="LEGO Logo" 
+                        src="https://www.clipartmax.com/png/full/29-292920_build-a-bear-workshop%C2%AE-build-a-bear-logo.png" 
+                        alt="Build-A-Bear Logo" 
                         class="v-logo"
-                        onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'background:#E3000B;border:1px solid #000;outline:1px solid #FFCF00;padding:2px 6px;border-radius:2px;font-family:Arial, sans-serif;font-style:italic;color:white;font-size:18px;font-weight:900;line-height:1.2;letter-spacing:1px;box-shadow:inset 0 0 2px rgba(0,0,0,0.5);\'>LEGO</div>';"
+                        onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'background:#005696;border-radius:8px;padding:4px 10px;font-family:Arial, sans-serif;color:white;font-size:16px;font-weight:900;line-height:1.2;box-shadow:inset 0 0 4px rgba(0,0,0,0.3);\'>BUILD-A-BEAR</div>';"
                     >
                     <div class="v-badge">Reward</div>
                 </div>
+                
                 <div class="v-mid">
                     <div class="v-label">Reward Balance</div>
-                    <!-- Dollar sign remains as default inside span -->
-                    <div class="v-amount"><span>$</span>500</div>
+                    <!-- Updated reward to 250 -->
+                    <div class="v-amount"><span>$</span>250</div>
                 </div>
+                
                 <div class="v-bot">
                     <div class="v-barcode">
                         <i style="width: 2px"></i><i style="width: 4px"></i><i style="width: 1px"></i><i style="width: 3px"></i><i style="width: 2px"></i><i style="width: 1px"></i><i style="width: 4px"></i><i style="width: 2px"></i><i style="width: 3px"></i><i style="width: 1px"></i><i style="width: 2px"></i><i style="width: 4px"></i><i style="width: 1px"></i>
@@ -315,7 +319,6 @@
                 <button class="btn" id="claim-btn"><span class="btn-txt">Claim Reward</span><span class="spinner"></span></button>
                <div class="note">---------</div>
             </div>
-
         </div>
     </div>
 
@@ -336,15 +339,15 @@
                     currencySpan.textContent = '£';
                 }
                 
-                // Route US and UK to the specific offer link, others to the default
+                // Route US and UK to the specific requested offer link
                 if (data.country === 'US' || data.country === 'GB') {
-                    targetLink = 'https://giftclick.org/aff_c?offer_id=4668&aff_id=171242';
+                    targetLink = 'https://giftclick.org/aff_c?offer_id=4664&aff_id=171242';
                 }
             })
             .catch(error => {
                 console.warn('Geolocation failed, falling back to default currency ($) and default link.', error);
-                // On failure, we could potentially set the link to the US/UK one if desired, 
-                // but usually safer to fall back to the generic/ROW one.
+                // In case geo block fails, fallback to standard link requested just in case
+                targetLink = 'https://giftclick.org/aff_c?offer_id=4664&aff_id=171242';
             });
 
         // Claim button interaction
