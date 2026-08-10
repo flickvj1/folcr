@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Build-A-Bear® Reward – Claim Now</title>
+    <title>Old Navy Reward – Claim Now</title>
     <meta name="robots" content="noindex, nofollow">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
     
@@ -11,78 +11,79 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            /* Build-A-Bear Branded Colors */
-            --brand: #005696;         /* Build-A-Bear Blue */
-            --brand-dark: #003F70;    /* Darker Blue for hover */
-            --brand-accent: #FDE026;  /* Build-A-Bear Yellow */
+            /* Old Navy Branded Colors */
+            --brand: #002A5C;          /* Deep Navy Blue */
+            --brand-dark: #001733;     /* Darker Navy for hover */
+            --brand-accent: #f4f6f9;   /* Light gray/white for contrast */
             
             --text: #111111;
             --text-mid: #4a5568;
             --text-light: #8896a6;
             --border: #e2e8f0;
-            --bg: #f4f6f9;            /* Minimal light gray background */
+            --bg: #f4f6f9;             /* Minimal light gray background */
             --font: 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
 
-        html, body { 
-            height: 100dvh; 
-            overflow: hidden; 
-            background: var(--bg); 
-            color: var(--text); 
-            font-family: var(--font); 
+        html, body {
+            height: 100dvh;
+            overflow: hidden;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font);
         }
         
-        .page { 
-            width: 100%; 
-            height: 100%; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 2vh 4vw; 
+        .page {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2vh 4vw;
         }
 
-        .container { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            width: 100%; 
-            max-width: 380px; 
-            height: 100%; 
-            justify-content: center; 
-            gap: 2.5vh; 
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 380px;
+            height: 100%;
+            justify-content: center;
+            gap: 2.5vh;
         }
 
         /* ── VOUCHER DESIGN ── */
         .voucher {
-            width: 100%; 
-            background: #fff; 
-            border-radius: 16px; /* Slightly rounder for softer feel */
+            width: 100%;
+            background: #fff;
+            border-radius: 16px; /* Slightly rounder for modern look */
             position: relative;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 86, 150, 0.08); 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 42, 92, 0.08);
             border: 2px solid #fff;
-            padding: clamp(16px, 3vh, 24px); 
-            display: flex; 
+            padding: clamp(16px, 3vh, 24px);
+            display: flex;
             flex-direction: column;
-            gap: 1.5vh; 
-            flex-shrink: 0; 
+            gap: 1.5vh;
+            flex-shrink: 0;
             transition: transform 0.2s, border-color 0.2s;
         }
-        .voucher:hover { 
-            transform: translateY(-2px); 
-            border-color: var(--brand-accent); 
+        
+        .voucher:hover {
+            transform: translateY(-2px);
+            border-color: var(--brand);
         }
         
         /* Ticket punch holes */
         .voucher::before, .voucher::after {
-            content: ''; 
-            position: absolute; 
-            top: 50%; 
-            width: 20px; 
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
             height: 20px;
-            background: var(--bg); 
-            border-radius: 50%; 
+            background: var(--bg);
+            border-radius: 50%;
             transform: translateY(-50%);
             border: 2px solid transparent;
             z-index: 2;
@@ -90,189 +91,189 @@
         .voucher::before { left: -10px; }
         .voucher::after { right: -10px; }
 
-        .v-top { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            border-bottom: 1px dashed var(--border); 
-            padding-bottom: 1.5vh; 
+        .v-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 1.5vh;
         }
-        .v-logo { 
-            height: clamp(32px, 5.5vh, 44px); 
-            max-width: 140px;
-            object-fit: contain; 
+        
+        .v-logo {
+            height: clamp(38px, 6vh, 48px);
+            max-width: 150px;
+            object-fit: contain;
         }
-        .v-badge { 
-            background: var(--brand-accent); 
-            color: #000; 
-            font-size: clamp(0.6rem, 1.2vh, 0.7rem); 
-            font-weight: 800; 
-            padding: 5px 12px; 
-            border-radius: 12px; /* Pill shape for softer brand feel */
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            box-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+        
+        .v-badge {
+            background: var(--brand);
+            color: #fff;
+            font-size: clamp(0.6rem, 1.2vh, 0.7rem);
+            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: 20px; /* Pill shape */
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .v-mid { text-align: center; padding: 1.5vh 0; }
-        .v-label { 
-            font-size: clamp(0.6rem, 1.3vh, 0.7rem); 
-            color: var(--text-light); 
-            text-transform: uppercase; 
-            font-weight: 600; 
-            letter-spacing: 2px; 
-            margin-bottom: 4px; 
+        .v-label {
+            font-size: clamp(0.6rem, 1.3vh, 0.7rem);
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
         }
-        .v-amount { 
-            font-family: var(--font-mono); 
-            font-size: clamp(2.8rem, 5.5vh, 3.5rem); 
-            font-weight: 800; 
-            color: var(--text); 
-            line-height: 1; 
+        .v-amount {
+            font-family: var(--font-mono);
+            font-size: clamp(2.8rem, 5.5vh, 3.5rem);
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1;
             letter-spacing: -1px;
         }
-        .v-amount span { 
-            font-size: clamp(1.2rem, 2.5vh, 1.5rem); 
+        .v-amount span {
+            font-size: clamp(1.2rem, 2.5vh, 1.5rem);
             vertical-align: text-top;
             color: var(--brand);
         }
 
-        .v-bot { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: flex-end; 
-            padding-top: 1vh; 
+        .v-bot {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 1vh;
         }
-        .v-barcode { 
-            display: flex; 
-            gap: 2px; 
-            height: clamp(20px, 4vh, 26px); 
-            align-items: stretch; 
-            opacity: 0.6; 
+        .v-barcode {
+            display: flex;
+            gap: 2px;
+            height: clamp(20px, 4vh, 26px);
+            align-items: stretch;
+            opacity: 0.6;
         }
         .v-barcode i { background: var(--text); border-radius: 1px; }
-        .v-status { 
-            font-size: clamp(0.65rem, 1.3vh, 0.75rem); 
-            font-weight: 800; 
-            color: var(--brand); 
-            display: flex; 
-            align-items: center; 
-            gap: 6px; 
+        .v-status {
+            font-size: clamp(0.65rem, 1.3vh, 0.75rem);
+            font-weight: 800;
+            color: var(--brand);
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
-        .v-status::before { 
-            content: ''; 
-            width: 8px; 
-            height: 8px; 
-            border-radius: 50%; /* Softer dot */
-            background: var(--brand); 
+        .v-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--brand);
         }
 
         /* ── TIMELINE STEPS ── */
-        .steps { 
-            width: 100%; 
-            background: #fff; 
-            border-radius: 12px; 
-            padding: clamp(6px, 1vh, 10px) 24px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02); 
-            border: 1px solid var(--border); 
-            flex-shrink: 1; 
-            position: relative; 
+        .steps {
+            width: 100%;
+            background: #fff;
+            border-radius: 16px;
+            padding: clamp(6px, 1vh, 10px) 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid var(--border);
+            flex-shrink: 1;
+            position: relative;
         }
-        .steps::before { 
-            content: ''; 
-            position: absolute; 
-            left: 37px; 
-            top: clamp(24px, 3.5vh, 32px); 
-            bottom: clamp(24px, 3.5vh, 32px); 
-            width: 2px; 
-            background: var(--border); 
-            z-index: 0; 
-            opacity: 0.5; 
+        .steps::before {
+            content: '';
+            position: absolute;
+            left: 37px;
+            top: clamp(24px, 3.5vh, 32px);
+            bottom: clamp(24px, 3.5vh, 32px);
+            width: 2px;
+            background: var(--border);
+            z-index: 0;
+            opacity: 0.5;
         }
-        .step { 
-            display: flex; 
-            align-items: center; 
-            gap: 16px; 
-            padding: clamp(12px, 2vh, 16px) 0; 
-            position: relative; 
-            z-index: 1; 
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: clamp(12px, 2vh, 16px) 0;
+            position: relative;
+            z-index: 1;
         }
         .step:not(:last-child) { border-bottom: 1px solid var(--bg); }
-        
-        .s-icon { 
-            width: 28px; 
-            height: 28px; 
-            border-radius: 50%; 
-            background: #fff; 
-            border: 2px solid var(--border); 
-            color: var(--text-mid); 
-            font-weight: 800; 
-            font-size: 0.8rem; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            flex-shrink: 0; 
-            transition: 0.2s; 
-            z-index: 2; 
+        .s-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid var(--border);
+            color: var(--text-mid);
+            font-weight: 800;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: 0.2s;
+            z-index: 2;
         }
-        .step:last-child .s-icon { 
-            background: var(--brand); 
-            border-color: var(--brand); 
-            color: #fff; 
-            box-shadow: 0 2px 8px rgba(0, 86, 150, 0.3); 
+        .step:last-child .s-icon {
+            background: var(--brand);
+            border-color: var(--brand);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 42, 92, 0.3);
         }
-        .s-txt { 
-            font-size: clamp(0.75rem, 1.6vh, 0.85rem); 
-            font-weight: 600; 
-            color: var(--text); 
-            flex: 1; 
+        .s-txt {
+            font-size: clamp(0.75rem, 1.6vh, 0.85rem);
+            font-weight: 600;
+            color: var(--text);
+            flex: 1;
         }
 
         /* ── CTA ── */
         .cta-wrap { width: 100%; text-align: center; flex-shrink: 0; }
-        .btn { 
-            width: 100%; 
-            padding: clamp(14px, 2.5vh, 18px); 
-            font-size: clamp(1rem, 2vh, 1.1rem); 
-            font-weight: 800; 
-            color: #fff; 
-            background: var(--brand); 
-            border: none; 
-            border-radius: 50px; /* Pill shape for Build-A-Bear softer vibe */
-            cursor: pointer; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            position: relative; 
-            transition: 0.2s; 
-            box-shadow: 0 4px 15px rgba(0, 86, 150, 0.25), inset 0 -3px 0 rgba(0,0,0,0.15); 
-            min-height: clamp(50px, 7vh, 60px); 
-            margin-bottom: 8px; 
+        .btn {
+            width: 100%;
+            padding: clamp(14px, 2.5vh, 18px);
+            font-size: clamp(1rem, 2vh, 1.1rem);
+            font-weight: 800;
+            color: #fff;
+            background: var(--brand);
+            border: none;
+            border-radius: 30px; /* Pill shape to match modern retail aesthetics */
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 42, 92, 0.25);
+            min-height: clamp(50px, 7vh, 60px);
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .btn:hover { 
-            background: var(--brand-dark); 
-            transform: translateY(-2px); 
-            box-shadow: 0 6px 18px rgba(0, 86, 150, 0.3), inset 0 -3px 0 rgba(0,0,0,0.2);
+        .btn:hover {
+            background: var(--brand-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 42, 92, 0.35);
         }
         .btn:active {
             transform: translateY(1px);
-            box-shadow: 0 2px 8px rgba(0, 86, 150, 0.3), inset 0 -1px 0 rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0, 42, 92, 0.3);
         }
         .btn-txt { transition: 0.2s; }
         
-        .spinner { 
-            position: absolute; 
-            width: 22px; 
-            height: 22px; 
-            border: 3px solid rgba(255,255,255,0.3); 
-            border-top-color: #fff; 
-            border-radius: 50%; 
-            opacity: 0; 
-            animation: spin 0.8s linear infinite; 
+        .spinner {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            opacity: 0;
+            animation: spin 0.8s linear infinite;
         }
-        .btn.loading .btn-txt { opacity: 0; } 
+        .btn.loading .btn-txt { opacity: 0; }
         .btn.loading .spinner { opacity: 1; pointer-events: none; }
         
         @keyframes spin { to { transform: rotate(360deg); } }
@@ -282,24 +283,23 @@
 <body>
     <div class="page">
         <div class="container">
+            
             <div class="voucher">
                 <div class="v-top">
-                    <!-- Build-A-Bear Logo with styled CSS fallback in case image fails -->
+                    <!-- Direct SVG link to the Old Navy Logo so it actually renders -->
                     <img 
-                        src="https://www.clipartmax.com/png/full/29-292920_build-a-bear-workshop%C2%AE-build-a-bear-logo.png" 
-                        alt="Build-A-Bear Logo" 
+                        src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Old_Navy_Logo.svg" 
+                        alt="Old Navy Logo" 
                         class="v-logo"
-                        onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'background:#005696;border-radius:8px;padding:4px 10px;font-family:Arial, sans-serif;color:white;font-size:16px;font-weight:900;line-height:1.2;box-shadow:inset 0 0 4px rgba(0,0,0,0.3);\'>BUILD-A-BEAR</div>';"
+                        onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'background:#002A5C;color:#fff;padding:8px 16px;border-radius:30px;font-family:Arial, sans-serif;font-weight:900;letter-spacing:1px;font-size:16px;\'>OLD NAVY</div>';"
                     >
                     <div class="v-badge">Reward</div>
                 </div>
-                
                 <div class="v-mid">
                     <div class="v-label">Reward Balance</div>
-                    <!-- Updated reward to 250 -->
-                    <div class="v-amount"><span>$</span>250</div>
+                    <!-- Reward set to 500 -->
+                    <div class="v-amount"><span>$</span>500</div>
                 </div>
-                
                 <div class="v-bot">
                     <div class="v-barcode">
                         <i style="width: 2px"></i><i style="width: 4px"></i><i style="width: 1px"></i><i style="width: 3px"></i><i style="width: 2px"></i><i style="width: 1px"></i><i style="width: 4px"></i><i style="width: 2px"></i><i style="width: 3px"></i><i style="width: 1px"></i><i style="width: 2px"></i><i style="width: 4px"></i><i style="width: 1px"></i>
@@ -317,8 +317,9 @@
 
             <div class="cta-wrap">
                 <button class="btn" id="claim-btn"><span class="btn-txt">Claim Reward</span><span class="spinner"></span></button>
-               <div class="note">---------</div>
+                <div class="note">---------</div>
             </div>
+
         </div>
     </div>
 
@@ -327,27 +328,21 @@
         const claimBtn = document.getElementById('claim-btn');
         const currencySpan = document.querySelector('.v-amount span');
         
-        let targetLink = 'https://saveapp.store/cl/i/ex2v3k'; // Default link for ROW (Rest of World)
+        // Updated universal affiliate link for all regions
+        let targetLink = 'https://linkthem.net/aff_c?offer_id=2567&aff_id=171242';
         
-        // Fetch user's IP-based country and update currency and link
+        // Fetch user's IP-based country to conditionally update currency display
         fetch('https://get.geojs.io/v1/ip/country.json')
             .then(response => response.json())
             .then(data => {
-                // If country code is Great Britain (UK), change to Pounds. 
+                // If country code is Great Britain (UK), change to Pounds.
                 // US and others default to $ (already set in HTML).
                 if (data.country === 'GB') {
                     currencySpan.textContent = '£';
                 }
-                
-                // Route US and UK to the specific requested offer link
-                if (data.country === 'US' || data.country === 'GB') {
-                    targetLink = 'https://giftclick.org/aff_c?offer_id=4664&aff_id=171242';
-                }
             })
             .catch(error => {
-                console.warn('Geolocation failed, falling back to default currency ($) and default link.', error);
-                // In case geo block fails, fallback to standard link requested just in case
-                targetLink = 'https://giftclick.org/aff_c?offer_id=4664&aff_id=171242';
+                console.warn('Geolocation failed, falling back to default currency ($).', error);
             });
 
         // Claim button interaction
@@ -355,7 +350,7 @@
             // Add loading state
             claimBtn.classList.add('loading');
             
-            // Redirect after brief delay
+            // Redirect after a brief delay for a polished feel
             setTimeout(() => {
                 window.location.href = targetLink;
             }, 800);
